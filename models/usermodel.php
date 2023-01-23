@@ -12,6 +12,8 @@ static public function add_user($data){
 
         
             $db->execute();
+            $db = NULL;
+            header('Location: login');
             
         
 }

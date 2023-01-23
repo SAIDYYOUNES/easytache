@@ -69,37 +69,18 @@ function check(e) {
 		}
 	}
 }
-// function checkParent(t, elm) {
-// 	while (t.parentNode) {
-// 		if (t == elm) {
-// 			return true;
-// 		}
-// 		t = t.parentNode;
-// 	}
-// 	return false;
-// }
-// HTMLDataListElement
-//afficher le formulaire de reservation pour company//
-// var others = document.getElementById("others");
+function checkParent(t, elm) {
+	while (t.parentNode) {
+		if (t == elm) {
+			return true;
+		}
+		t = t.parentNode;
+	}
+	return false;
+}
 
-// let button = document.getElementById("aa");
-// button.addEventListener("click", () => {
-//     others.classList.toggle('hidden');
-// });
-//suite options 1
 
-var todo = document.getElementById("todo");
-// var todobutton = document.getElementById("todobutton");
-// var doing = document.getElementById("doing");
-// var doingbutton = document.getElementById("doingbutton");
-// var done = document.getElementById("done");
-// var donebutton = document.getElementById("donebutton");
 
-// function todotache(){
-//    var todotach = document.createElement("textarea");
-//    todo.append(todotach);
-//    todotach.classList.add('textarea');
-// }
 function todoarea() {
 	var todoarea = document.getElementById("todoarea");
 	var todobutton = document.getElementById("todobutton");
@@ -139,36 +120,7 @@ function donearea(){
 		overlay.classList.toggle('hidden')
 		overlay.classList.toggle('flex')
 	}
-// window.addEventListener('DOMContentLoaded', () => {
-// 	const delBtn = document.querySelectorAll('.delete-btn')
-// 	const closeBtn = document.querySelectorAll('.close-modal')
-// 	console.log(delBtn);
 
-// 	const toggleModal = () => {
-// 		overlay.classList.toggle('hidden')
-// 		overlay.classList.toggle('flex')
-// 	}
-// 	delBtn.forEach(item => {
-// 		item.addEventListener('click', toggleModal)
-// 	})
-// 	// delBtn.forEach(toggleModal);
-// 	// forEach(delBtn as delete){
-// 	// 	delBtn.addEventListener('click', toggleModal)
-
-// 	// }
-
-// 	function closegg(id) {
-// 		const overlay = document.getElementById(`overlay${id}`)
-// 		const delBtn = document.querySelectorAll('.delete-btn')
-// 	const closeBtn = document.querySelectorAll('.close-modal')
-// 	}
-
-
-
-// 	closeBtn[0].addEventListener('click', toggleModal)
-// 	closeBtn[1].addEventListener('click', toggleModal)
-// }
-// )
 
 
 function taches(){

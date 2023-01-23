@@ -68,6 +68,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
     
 }
 
+
 ?>
  <!-- add many taches -->
  <div class=" bg-black bg-opacity-50 absolute inset-0 hidden  flex justify-center items-center"
@@ -100,11 +101,22 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                 </div>
 </div>
 
+
 <section class=" top back">
-    <div class="pl-3 pt-3 flex justify-start">
-        <button id="tachesbtn" onclick="taches()" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full  lg:mt-0 py-3 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+    <div class="px-3 pt-3 flex-col sm:flex  justify-between">
+        <button id="tachesbtn" onclick="taches()" class="mx-auto  hover:underline bg-white text-gray-800 font-bold rounded-full  lg:mt-0 py-3 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
             add taches
         </button>
+        
+        <form class="mt-2" method="post" action="search" autocomplete="off">
+            <div class="flex justify-end">
+                <input class="rounded-full bg-gray-200 pl-3 text-black " name="searchinp" type="text" placeholder="        search">
+                <button name="search"  class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full  lg:mt-0 py-3 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    search a tache
+                </button>
+            </div>
+        </form>
+        
 
     </div>
     <div class=" w10/12  pt-8 flex justify-center py-6">
@@ -119,7 +131,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                         <div class="my-2 bg-white rounded p3 px-4 text-black ">
                             <p class=" resize-none  bg-white font-bold" >
                                                         <?php echo $todo['description'] ?>
-                                                        <p class=" resize-none  bg-white font-bold" >
+                                                        <p class=" resize-none  bg-white font-bold" >todo before:
                                                         <?php echo $todo['deadline'] ?>
 
                     </p>
@@ -139,9 +151,9 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         </div>
                                     </div>
                                     <form method="post">
-                                    <label class="text-red-400" for="">previous deadline [<?php echo $todo['deadline'] ?>]</label>
-                                    <input type="date" name="deadline" id="">
-                                    <label class="text-red-400" for="">previous status [<?php echo $todo['status'] ?>]</label>
+                                    <label class="text-black font-bold " for="">previous deadline [<?php echo $todo['deadline'] ?>]</label>
+                                    <input type="date" name="deadline" value="<?php echo $todo['deadline'] ?>">
+                                    <label class="text-black font-bold" for="">previous status [<?php echo $todo['status'] ?>]</label>
                                         <div class="mt-2 text-sm ">
                                             
                                             <select name="status" id="" required>
@@ -158,7 +170,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         <div class="mt-3 flex justify-end space-x-3">
                                             <button type="button" onclick="closegg(<?php echo $todo['id'] ?>)"
                                                 class="close-modal px-3 py-1 rounded hover:bg-red-300 hover:bg-opacity-50 hover:text-red-900">Cancel</button>
-                                            <button type="submit" class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                                            <button type="submit" class="px-3 py-1 bg-blue-800 text-gray-200 hover:bg-blue-600 rounded"
                                                 name="edit">edit</button>
                                         </div>
                                     </form>
@@ -217,7 +229,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                         <div class="my-2 bg-white rounded p3 px-4 text-black ">
                             <p class=" resize-none  bg-white font-bold" >
                                                         <?php echo $doing['description'] ?>
-                            <p class=" resize-none  bg-white font-bold" >
+                            <p class=" resize-none  bg-white font-bold" >todo before: 
                                                         <?php echo $doing['deadline'] ?>
 
                     </p>
@@ -237,9 +249,9 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         </div>
                                     </div>
                                     <form method="post">
-                                    <label class="text-red-400" for="">previous deadline [<?php echo $doing['deadline'] ?>]</label>
-                                    <input type="date" name="deadline" id="">
-                                    <label class="text-red-400" for="">previous status [<?php echo $doing['status'] ?>]</label>
+                                    <label class="text-black font-bold" for="">previous deadline [<?php echo $doing['deadline'] ?>]</label>
+                                    <input type="date" name="deadline" value="<?php echo $doing['deadline'] ?>">
+                                    <label class="text-black font-bold" for="">previous status [<?php echo $doing['status'] ?>]</label>
                                         <div class="mt-2 text-sm">
                                             <select name="status" id="" required>
                                                 <option value=""></option>
@@ -255,7 +267,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         <div class="mt-3 flex justify-end space-x-3">
                                             <button type="button" onclick="closegg(<?php echo $doing['id'] ?>)"
                                                 class="close-modal px-3 py-1 rounded hover:bg-red-300 hover:bg-opacity-50 hover:text-red-900">Cancel</button>
-                                            <button type="submit" class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                                            <button type="submit" class="px-3 py-1 bg-blue-800 text-gray-200 hover:bg-blue-600 rounded"
                                                 name="edit">edit</button>
                                         </div>
                                     </form>
@@ -312,7 +324,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                         <div class="my-2 bg-white rounded p3 px-4 text-black ">
                             <p class=" resize-none  bg-white font-bold" readonly>
                                                         <?php echo $done['description'] ?>
-                                                        <p class=" resize-none  bg-white font-bold" >
+                                                        <p class=" resize-none  bg-white font-bold" >todo before:
                                                         <?php echo $done['deadline'] ?>
                                                         
 
@@ -333,9 +345,9 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         </div>
                                     </div>
                                     <form method="post">
-                                        <label class="text-red-400" for="">previous deadline [<?php echo $done['deadline'] ?>]</label>
-                                        <input type="date" name="deadline" id="">
-                                        <label class="text-red-400" for="">previous status [<?php echo $done['status'] ?>]</label>
+                                        <label class="text-black font-bold" for="">previous deadline [<?php echo $done['deadline'] ?>]</label>
+                                        <input type="date" name="deadline" value="<?php echo $doing['deadline'] ?>">
+                                        <label class="text-black font-bold" for="">previous status [<?php echo $done['status'] ?>]</label>
                                         <div class="mt-2 text-sm">
                                        
                                             <select name="status" id="" required>
@@ -352,7 +364,7 @@ if (isset($_POST['addtaches']) and isset($_POST['tachesnbr'])) {
                                         <div class="mt-3 flex justify-end space-x-3">
                                             <button type="button" onclick="closegg(<?php echo $done['id'] ?>)"
                                                 class="close-modal px-3 py-1 rounded hover:bg-red-300 hover:bg-opacity-50 hover:text-red-900">Cancel</button>
-                                            <button type="button" class="px-3 py-1 bg-red-800 text-gray-200 hover:bg-red-600 rounded"
+                                            <button type="button" class="px-3 py-1 bg-blue-800 text-gray-200 hover:bg-blue-600 rounded"
                                                 name="edit">edit</button>
                                         </div>
                                     </form>

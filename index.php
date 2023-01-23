@@ -7,7 +7,7 @@ require_once './views/includes/header.php';
 
 $home = new HomeController();
 
-$pages = ['home','update','delete','logout','signup','login','taches'];
+$pages = ['home','update','delete','logout','signup','login','taches','search'];
 
 // $cc = "ggggggggg{$pages[0]}jhhjjkhk";
 // var_dump($cc);

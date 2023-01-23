@@ -93,19 +93,23 @@ class tachesmodel
 
         return $taches;
     }
-    // static public function getOnetache($id)
-    // {
-    //     $db = Database::connect()->prepare("SELECT * FROM taches WHERE id = :id");
+    static public function gettaches($word)
+    {
+        $db = Database::connect()->prepare("SELECT * FROM taches WHERE (`description` like :word1 or `description` like :word2 or `description` like :word3) and user_id=:user;
+        ");
 
-    //     $db->bindParam(':id', $id['id']);
-    //     $db->execute();
-    //     $taches = $db->fetchAll();
-    //     $db = NULL;
+        $db->bindParam(':word1', $word[1]);
+        $db->bindParam(':word2', $word[2]);
+        $db->bindParam(':word3', $word[3]);
+        $db->bindParam(':user', $_SESSION['id']);
+        $db->execute();
+        $taches = $db->fetchAll();
+        $db = NULL;
 
 
 
-    //     return $taches;
-    // }
+        return $taches;
+    }
 
     static public function update_tache($data_update)
     {

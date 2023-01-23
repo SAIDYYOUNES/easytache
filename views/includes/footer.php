@@ -1,5 +1,5 @@
 <?php
-if($_GET['page']==='taches'){
+if($_GET['page']==='taches' or $_GET['page']==='search'){
 
 ?>
  <script src="./views/js.js"></script>
